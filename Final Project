@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void guessTheNumber(){
+    srand(time(0)); 
+    int num = (rand()%50);
+    int guessUser;
+    cout << "Guess the number from 1-100.\n";
+    while (cin >> guessUser)
+    {
+        //correct guess
+        if(num == guessUser){
+            cout << "Correct guess ^_^.\n";
+            break;
+        }
+        // check if the guess near by 10
+        else if(abs(num - guessUser) <= 10){
+            cout << "Near :D\n";
+        }
+
+        // check if the guess was near by 20
+        else if(abs(num - guessUser) <= 20){
+            cout << "Not Very Far.\n";
+        }
+
+        // far guess
+        else{
+            cout << "Very Far.\n";
+        }
+    }
+}
+
+void simpleCalculator(){
+    float a, b;
+    char op;
+    cout << "Enter Number, operation, number respictevly.\n";
+    cout << "For example: 5 + 3.\n";
+    cin >> a >> op >> b;
+    switch (op){
+    case '+':   
+        cout << a + b << endl;
+        break;
+    case '-':   
+        cout << a - b << endl;
+        break;
+    case '*':   
+        cout << a * b << endl;
+        break;
+    case '/':   
+        cout << a / b << endl;
+        break;
+  
+    default:
+        cout << "Invalid Operation.\n";
+        break;
+    }
+}
+
+int main(){     
+    //guessTheNumber();
+}
